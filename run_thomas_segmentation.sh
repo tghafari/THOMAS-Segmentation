@@ -13,10 +13,15 @@
 # output_dir is where you'd save the output
 # singularity_dir is where you saved the hipsthomas container
 
+module purge
+module load bluebear
+module load FSL/6.0.5.1-foss-2021a
+
 # Define input and output directories
-input_dir="/rds/projects/q/quinna-camcan/cc700/mri/pipeline/release004/BIDS_20190411/anat/sub-CC110037/anat"
-output_dir="/rds/projects/j/jenseno-avtemporal-attention/Projects/subcortical-structures/attention-striatum-7T/results"
-singularity_dir="/rds/projects/j/jenseno-avtemporal-attention/Projects/subcortical-structures/attention-striatum-7T" 
+rds_root="/rds/projects/j/jenseno-avtemporal-attention/Projects/subcortical-structures"
+input_dir="${rds_root}/load/MRI-data/Processed_Data/S01.anat"
+output_dir="${rds_root}/attention-striatum-7T/results"
+singularity_dir="${rds_root}/attention-striatum-7T" 
 
 set -e
 
@@ -27,5 +32,5 @@ singularity run \
     -W "${input_dir}" \
     -u --cleanenv "${singularity_dir}/hipsthomas.sif" bash -c \
     "hipsthomas_csh \
-    -i ${input_dir}/sub-CC110037_T1w.nii.gz \
+    -i "${input_dir}/T1.nii.gz" \
     -t1 -big > ${output_dir}/THOMAS.log"
