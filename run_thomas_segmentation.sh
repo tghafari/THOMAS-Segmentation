@@ -13,9 +13,9 @@
 # output_dir is where you'd save the output
 # singularity_dir is where you saved the hipsthomas container
 
-module purge
-module load bluebear
-module load FSL/6.0.5.1-foss-2021a
+# module purge
+# module load bluebear
+# module load FSL/6.0.5.1-foss-2021a
 
 # Define input and output directories
 rds_root="/rds/projects/j/jenseno-avtemporal-attention/Projects/subcortical-structures"
