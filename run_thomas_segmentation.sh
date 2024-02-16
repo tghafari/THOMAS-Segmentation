@@ -15,7 +15,7 @@ set -e
 rds_root="/rds/projects/j/jenseno-avtemporal-attention/Projects/subcortical-structures"
 
 # Directory containing the T1 image.
-input_dir="${rds_root}/load/MRI-data/Processed_Data/S01.anat"
+input_dir="${rds_root}/load/MRI-data/Processed_Data/S02.anat"
 
 # Directory to save outputs.
 output_dir="${rds_root}/attention-striatum-7T/results"
@@ -31,7 +31,7 @@ apptainer run \
     -B "${input_dir}:${input_dir}" \
     -B "${output_dir}:${output_dir}" \
     -B "${apptainer_dir}:${apptainer_dir}" \
-    -W "${input_dir}}" \
+    -W "${input_dir}" \
     -u --cleanenv "${apptainer_dir}/hipsthomas.sif" bash -c \
     "hipsthomas_csh \
     -i T1.nii.gz \
