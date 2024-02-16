@@ -10,10 +10,21 @@
 set -e
 
 # Define input and output directories
+
+# Define root rds folder
 rds_root="/rds/projects/j/jenseno-avtemporal-attention/Projects/subcortical-structures"
-input_dir="${rds_root}/load/MRI-data/Processed_Data/S02.anat/"
+
+# Directory containing the T1 image.
+input_dir="${rds_root}/load/MRI-data/Processed_Data/S02.anat"
+
+# Directory to save outputs.
 output_dir="${rds_root}/attention-striatum-7T/results"
+
+# Directory where hipsthomas container is saved.
 apptainer_dir="${rds_root}/attention-striatum-7T"
+
+# Change directory to where the T1 is saved.
+cd ${input_dir}
 
 # Run the Apptainer command
 apptainer run \
