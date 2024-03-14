@@ -9,30 +9,26 @@
 
 set -e
 
-# Define input and output directories
-
 # Define root rds folder
 rds_root="/rds/projects/j/jenseno-avtemporal-attention/Projects/subcortical-structures"
 
 # Directory containing the T1 image.
-input_dir="${rds_root}/load/MRI-data/Processed_Data/S02.anat"
-
-# Directory to save outputs.
-output_dir="${rds_root}/attention-striatum-7T/results"
+input_dir="${rds_root}/SubStr-and-behavioral-bias/T1-scans"
+T1_fname="20231011#C475_nifti_S1004"
+input_fname="${input_dir}/${T1_fname}"
 
 # Directory where hipsthomas container is saved.
-apptainer_dir="${rds_root}/attention-striatum-7T"
+apptainer_dir=${rds_root}
 
-# Change directory to where the T1 is saved.
-cd ${input_dir}
+# Change directory to where the T1 is saved - THOMAS doesn't like to work from outside of the directory.
+cd ${input_fname}
 
 # Run the Apptainer command
 apptainer run \
-    -B "${input_dir}:${input_dir}" \
-    -B "${output_dir}:${output_dir}" \
+    -B "${input_fname}:${input_fname}" \
     -B "${apptainer_dir}:${apptainer_dir}" \
-    -W "${input_dir}" \
+    -W "${input_fname}" \
     -u --cleanenv "${apptainer_dir}/hipsthomas.sif" bash -c \
     "hipsthomas_csh \
-    -i T1.nii.gz \
-    -t1 -big > ${output_dir}/THOMAS.log 2>&1"
+    -i T1_vol_v1_5.nii.gz \
+    -t1 -big > ${input_fname}/THOMAS.log 2>&1"
