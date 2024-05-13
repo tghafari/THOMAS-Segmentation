@@ -42,11 +42,11 @@ elif platform == 'mac':
 mri_deriv_dir = op.join(jenseno_dir ,'subcortical-structures/SubStr-and-behavioral-bias/derivatives/MRI_lateralisations')
 subStr_segmented_dir = op.join(mri_deriv_dir, 'substr_segmented')
 output_dir = op.join(mri_deriv_dir, 'thalamus_lateralisation_indices')
-vol_output_fname = op.join(output_dir, 'all_subs_thalamus_volumes_5.csv')
-lat_output_fname = op.join(output_dir,'thal_lateralisation_volumes_5.csv')
+vol_output_fname = op.join(output_dir, 'all_subs_thalamus_volumes_7.csv')
+lat_output_fname = op.join(output_dir,'thal_lateralisation_volumes_7.csv')
 
 # list of subjects folders
-num_sub_list = range(1,5)
+num_sub_list = range(1,8)
 
 # Initialize lists to store lateralisation volumes for all participants
 lateralisation_volumes = {structure: [] for structure in ['1-THALAMUS', '2-AV', '4-VA', '5-VLa', '6-VLP', 
@@ -127,35 +127,3 @@ for structure in structures:
         plt.xlabel('Thalamus Total Volume')
         plt.ylabel(f'{structure} Total Volume')
         plt.show()
-
-
-        for idx, label in enumerate(labels):
-            volume_label = 'volume' + str(label) + '.txt'
-            substr_vol_fname = op.join(substr_dir, volume_label)
-            if op.exists(substr_vol_fname):
-                print(f"reading structure {structures[idx]} in subject #S100 {str(num_sub)}")
-                # Read the text file
-                with open(substr_vol_fname, "r") as file:
-                    line = file.readline()
-                substr_volume_array = np.fromstring(line.strip(), sep=' ')[1]     
-            else:
-                print(f"no volume for substructure {structures[idx]} found for subject #S100 {str(num_sub)}")
-                substr_volume_array = np.nan  
-            
-            # Store the volume of each substr in one columne and data of each subject in one row  
-            all_subject_substr_volume_table[i, idx] = substr_volume_array
-    else:
-        print('no substructures segmented by fsl for subject #S100' + str(num_sub))
-        all_subject_substr_volume_table[i, :] = np.nan 
-    
-    
-    
- 
-# Create a dataframe for all the data
-columns = ['SubID'] + structures
-df = pd.DataFrame(np.hstack((np.array(sub_IDs).reshape(-1, 1), all_subject_substr_volume_table)),
-                  columns=columns)
-df.set_index('SubID', inplace=True)
-
-# Save 
-df.to_csv(output_fname)   
