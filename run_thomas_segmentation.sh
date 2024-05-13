@@ -14,7 +14,14 @@ rds_root="/rds/projects/j/jenseno-avtemporal-attention/Projects/subcortical-stru
 
 # Directory containing the T1 image.
 input_dir="${rds_root}/SubStr-and-behavioral-bias/T1-scans"
-T1_fname="20231011#C475_nifti_S1004"
+t1_fnames=('S1021_20220923#C47E_nifti' 'S1022_20221102#C5F2_nifti' 'S1023_20240208#C3FA_nifti')
+            # 'S1024_20230426#C399_nifti' 'S1025_20211029#C3B4_nifti' 'S1026_20240313#C469_nifti'
+            # 'S1027_20240229#C472_nifti' 'S1028_20221202#C47B_nifti' 'S1029_20240229#C515_nifti' 
+            # 'S1030_20220308#C3A1_nifti' 'S1031_20240215#C416_nifti' 'S1032_20240229#C472_nifti')
+
+# Get the T1 image name for this array task
+T1_fname="S1005_20231110#C5AB_nifti"
+# "${T1_fnames[$SLURM_ARRAY_TASK_ID]}"
 input_fname="${input_dir}/${T1_fname}"
 
 # Directory where hipsthomas container is saved.
