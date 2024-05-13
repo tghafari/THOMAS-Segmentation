@@ -1,10 +1,12 @@
 """
 ===============================================
-03. calculate_lateralised_volume
+02. calculate_lateralised_volume
 
 This code reads the volume of thalamus segments
-(output of run_thomas_segmentation.sh) and 
-calculates lateralised index.
+(output of run_thomas_segmentation.sh).
+saves the right and left volumes in one csv,
+calculates lateralised index and saves in another
+csv file.
 
 
 written by Tara Ghafari
