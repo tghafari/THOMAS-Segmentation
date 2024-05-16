@@ -20,7 +20,7 @@ rds_root="/rds/projects/j/jenseno-avtemporal-attention/Projects/subcortical-stru
 input_dir="${rds_root}/SubStr-and-behavioral-bias/T1-scans"
 
 # Get the T1 image name for this array task
-T1_fname="S1025_20211029#C3B4_nifti"
+T1_fname="S1032_20240229#C472_nifti"
 input_fname="${input_dir}/${T1_fname}"
 
 # Directory where hipsthomas container is saved.
