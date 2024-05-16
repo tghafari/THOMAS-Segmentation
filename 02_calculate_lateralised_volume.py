@@ -45,7 +45,7 @@ elif platform == 'mac':
 # Define where to read and write the data
 mri_deriv_dir = op.join(jenseno_dir ,'subcortical-structures/SubStr-and-behavioral-bias/derivatives/MRI_lateralisations')
 subStr_segmented_dir = op.join(mri_deriv_dir, 'substr_segmented')
-output_dir = op.join(mri_deriv_dir, 'thalamus_lateralisation_indices')
+output_dir = op.join(mri_deriv_dir, 'lateralisation_indices')
 vol_output_fname = op.join(output_dir, 'all_subs_thalamus_volumes_32.csv')
 lat_output_fname = op.join(output_dir,'thal_lateralisation_volumes_32.csv')
 
