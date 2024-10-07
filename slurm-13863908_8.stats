@@ -9,3 +9,9 @@
 | Command /rds/projects/j/jenseno-avtemporal-attention/Projects/subcortical-structures/Thalamus/programming/github/THOMAS-Segmentation/run_thomas_segmentation.sh
 | WorkDir /rds/projects/j/jenseno-avtemporal-attention/Projects/subcortical-structures/Thalamus/programming/github/THOMAS-Segmentation
 +--------------------------------------------------------------------------+
++--------------------------------------------------------------------------+
+| Finished at Mon Oct  7 14:47:00 2024 for ghafarit(667799) on the BlueBEAR Cluster
+| Required (05:13:59 cputime, 1695288K memory used) - 00:39:43 walltime
+| JobState COMPLETING - Reason None
+| Exitcode 0:0
++--------------------------------------------------------------------------+
