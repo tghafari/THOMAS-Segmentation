@@ -1,0 +1,11 @@
++--------------------------------------------------------------------------+
+| Job on the BlueBEAR cluster:
+| Starting at Mon Oct  7 14:05:15 2024 for ghafarit(667799)
+| Identity jobid 13862952 jobname run_thomas_segmentation.sh
+| Array Identity 13862936_0
+| Running against project jenseno-avtemporal-attention and in partition icelake-shared
+| Requested cpu=10,mem=48G,node=1,billing=10 - 02:00:00 walltime
+| Assigned to nodes bear-pg0105u12a
+| Command /rds/projects/j/jenseno-avtemporal-attention/Projects/subcortical-structures/Thalamus/programming/github/THOMAS-Segmentation/run_thomas_segmentation.sh
+| WorkDir /rds/projects/j/jenseno-avtemporal-attention/Projects/subcortical-structures/Thalamus/programming/github/THOMAS-Segmentation
++--------------------------------------------------------------------------+

@@ -46,11 +46,11 @@ elif platform == 'mac':
 mri_deriv_dir = op.join(jenseno_dir ,'subcortical-structures/SubStr-and-behavioral-bias/derivatives/MRI_lateralisations')
 subStr_segmented_dir = op.join(mri_deriv_dir, 'substr_segmented')
 output_dir = op.join(mri_deriv_dir, 'lateralisation_indices')
-vol_output_fname = op.join(output_dir, 'all_subs_thalamus_volumes_32.csv')
-lat_output_fname = op.join(output_dir,'thal_lateralisation_volumes_32.csv')
+vol_output_fname = op.join(output_dir, 'all_subs_thalamus_volumes_45.csv')
+lat_output_fname = op.join(output_dir,'thal_lateralisation_volumes_45.csv')
 
 # list of subjects folders
-num_sub_list = range(1,33)
+num_sub_list = range(1,45)
 
 # Initialize lists to store lateralisation volumes for all participants
 lateralisation_volumes = {structure: [] for structure in ['1-THALAMUS', '2-AV', '4-VA', '5-VLa', '6-VLP', 
@@ -58,7 +58,6 @@ lateralisation_volumes = {structure: [] for structure in ['1-THALAMUS', '2-AV', 
                                                           '13-Hb', '14-MTT']}
 
 data_vol = []
-all_subject_substr_volume_table = np.full((6, 15), np.nan)
 sub_IDs =[]
 structures = ['1-THALAMUS', '2-AV', '4-VA', '5-VLa', '6-VLP', '7-VPL', '8-Pul', '9-LGN', '10-MGN', '11-CM', '12-MD-Pf', '13-Hb', '14-MTT']
 
