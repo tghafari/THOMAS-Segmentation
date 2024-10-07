@@ -33,7 +33,7 @@ def read_nuclei_volumes(filepath):
 def calculate_lateralisation_volume(vol_right, vol_left):
     return (vol_right - vol_left) / (vol_right + vol_left)
 
-platform = 'mac'
+platform = 'bluebear'
 scatters = False  # do you want to plot the sanity scatter plots?
 
 # Define where to read and write the data
